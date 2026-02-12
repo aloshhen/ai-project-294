@@ -65,3 +65,27 @@ body {
 .telegram-safe-bottom {
   padding-bottom: 6rem;
 }
+
+/* Animation for glow effect */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* SVG Icon styling for futuristic theme */
+.crypto-icon-glow {
+  filter: brightness(0) invert(0.9) drop-shadow(0 0 8px rgba(99, 102, 241, 0.8));
+  transition: filter 0.3s ease;
+}
+
+.crypto-icon-glow:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(168, 85, 247, 0.9));
+}
