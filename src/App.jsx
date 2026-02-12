@@ -4,12 +4,6 @@ import { motion, useInView, AnimatePresence } from 'framer-motion'
 import {
   ChevronRight,
   ArrowUpRight,
-  Sparkles,
-  Menu,
-  X,
-  Hexagon,
-  Triangle,
-  Pentagon,
 } from 'lucide-react'
 
 // Sparkline Chart Component
@@ -114,7 +108,8 @@ const topCoins = [
     isPositive: true,
     description: 'Multi-chain network enabling cross-blockchain transfers.',
     chartData: [35, 38, 36, 40, 42, 41, 45, 44, 47, 48],
-    icon: 'hexagon'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770905984-8023.svg?'
   },
   {
     id: 6,
@@ -126,7 +121,8 @@ const topCoins = [
     isPositive: true,
     description: 'Decentralized oracle network connecting smart contracts.',
     chartData: [25, 28, 32, 30, 35, 38, 36, 42, 45, 48],
-    icon: 'link'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770905975-7809.svg?'
   },
   {
     id: 7,
@@ -138,7 +134,8 @@ const topCoins = [
     isPositive: false,
     description: 'Blazingly fast smart contracts platform with low fees.',
     chartData: [45, 48, 44, 46, 42, 45, 41, 43, 40, 38],
-    icon: 'triangle'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770905965-9302.svg?'
   },
   {
     id: 8,
@@ -150,7 +147,8 @@ const topCoins = [
     isPositive: true,
     description: 'Ethereum scaling solution for faster, cheaper transactions.',
     chartData: [30, 32, 35, 33, 38, 40, 42, 45, 47, 50],
-    icon: 'pentagon'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770905957-7732.svg?'
   },
   {
     id: 9,
@@ -424,21 +422,17 @@ function App() {
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center border border-indigo-500/30 crypto-icon-container">
                         {coin.useProvidedSvg ? (
                           <img
                             src={coin.svgUrl}
                             alt={coin.name}
-                            className="w-8 h-8 object-contain filter brightness-0 invert-[0.9] drop-shadow-[0_0_8px_rgba(99,102,241,0.8)] hover:drop-shadow-[0_0_12px_rgba(168,85,247,0.9)] transition-all duration-300"
+                            className="w-8 h-8 object-contain crypto-icon-glow"
                           />
                         ) : (
                           <div className="w-8 h-8 flex items-center justify-center">
                             {coin.icon === 'zap' && <SafeIcon name="zap" size={24} className="text-yellow-400" />}
                             {coin.icon === 'circle' && <div className="w-6 h-6 rounded-full bg-blue-500" />}
-                            {coin.icon === 'hexagon' && <Hexagon size={24} className="text-pink-400" />}
-                            {coin.icon === 'link' && <SafeIcon name="trending-up" size={24} className="text-blue-400" />}
-                            {coin.icon === 'triangle' && <Triangle size={24} className="text-red-400" />}
-                            {coin.icon === 'pentagon' && <Pentagon size={24} className="text-purple-400" />}
                             {coin.icon === 'arrow-left-right' && <ArrowUpRight size={24} className="text-pink-400" />}
                             {coin.icon === 'ghost' && <div className="w-6 h-6 rounded-full bg-gradient-to-r from-purple-400 to-pink-400" />}
                           </div>
