@@ -1,28 +1,15 @@
 import { SafeIcon } from './components/SafeIcon';
-import { useState, useEffect, useRef } from 'react'
+import { useState, useRef } from 'react'
 import { motion, useInView, AnimatePresence } from 'framer-motion'
 import {
-  TrendingUp,
-  Shield,
-  Zap,
-  Globe,
   ChevronRight,
-  BarChart3,
-  Wallet,
-  Lock,
   ArrowUpRight,
   Sparkles,
   Menu,
   X,
-  Bitcoin,
-  CircleDollarSign,
   Hexagon,
-  Diamond,
   Triangle,
   Pentagon,
-  Octagon,
-  Square,
-  Circle
 } from 'lucide-react'
 
 // Sparkline Chart Component
@@ -76,7 +63,7 @@ const topCoins = [
     description: 'The pioneering cryptocurrency that started the digital revolution.',
     chartData: [45, 52, 48, 55, 58, 62, 59, 65, 63, 67],
     useProvidedSvg: true,
-    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/user-svg-1.svg?'
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770904197-3570.svg?'
   },
   {
     id: 2,
@@ -89,7 +76,7 @@ const topCoins = [
     description: 'Smart contract platform powering decentralized applications.',
     chartData: [40, 42, 45, 43, 48, 52, 50, 54, 53, 55],
     useProvidedSvg: true,
-    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/user-svg-1.svg?'
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770904191-3463.svg?'
   },
   {
     id: 3,
@@ -101,7 +88,8 @@ const topCoins = [
     isPositive: true,
     description: 'High-performance blockchain for fast, secure transactions.',
     chartData: [30, 35, 32, 40, 45, 42, 48, 52, 55, 58],
-    icon: 'zap'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770904168-2210.svg?'
   },
   {
     id: 4,
@@ -113,7 +101,8 @@ const topCoins = [
     isPositive: false,
     description: 'Research-driven blockchain with peer-reviewed technology.',
     chartData: [50, 48, 52, 45, 47, 43, 46, 42, 44, 40],
-    icon: 'circle'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770904161-3098.svg?'
   },
   {
     id: 5,
@@ -185,7 +174,8 @@ const topCoins = [
     isPositive: true,
     description: 'Decentralized lending protocol for earning interest.',
     chartData: [30, 32, 35, 38, 36, 42, 45, 48, 52, 55],
-    icon: 'ghost'
+    useProvidedSvg: true,
+    svgUrl: 'https://oejgkvftpbinliuopipr.supabase.co/storage/v1/object/public/assets/user_347995964/edit-svg-1770904174-9516.svg?'
   }
 ]
 
@@ -249,9 +239,9 @@ function App() {
     <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
       {/* Animated Background */}
       <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-600/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-purple-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
+        <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '4s' }} />
       </div>
 
       {/* Header */}
@@ -439,7 +429,7 @@ function App() {
                           <img
                             src={coin.svgUrl}
                             alt={coin.name}
-                            className="w-8 h-8 object-contain"
+                            className="w-8 h-8 object-contain filter brightness-0 invert-[0.9] drop-shadow-[0_0_8px_rgba(99,102,241,0.8)] hover:drop-shadow-[0_0_12px_rgba(168,85,247,0.9)] transition-all duration-300"
                           />
                         ) : (
                           <div className="w-8 h-8 flex items-center justify-center">
@@ -530,7 +520,7 @@ function App() {
                 whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 className="glass-card rounded-2xl p-8 hover:border-indigo-500/40 transition-all group"
               >
-                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:animate-glow">
+                <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.5)] transition-shadow">
                   <SafeIcon name={advantage.icon} size={32} className="text-white" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-white group-hover:text-indigo-300 transition-colors">
